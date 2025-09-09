@@ -57,6 +57,6 @@ jobs:
     - name: Run SSH commands
       run: |
         ssh -i ~/.ssh/id_ed25519 ubuntu@3.26.223.215 << 'EOF'
-          pkill -f 'java -jar' || true
+          pkill -f 'java -war' || true
           nohup java -jar ~/app/*-0.0.1-SNAPSHOT.war > log.txt 2>&1 &
         EOF
