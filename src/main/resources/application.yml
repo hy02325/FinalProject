@@ -10,7 +10,7 @@ spring: # 주의할 점은 내용작성시 들여쓰기 내어쓰기시 공백�
 
   mail:
     host: smtp.gmail.com
-    port: 9090
+    port: 587
     username: hayoung02325@gmail.com
     password: rkxxdvmxxacztbcz
     properties:
