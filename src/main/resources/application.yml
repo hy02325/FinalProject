@@ -31,8 +31,9 @@ spring: # 주의할 점은 내용작성시 들여쓰기 내어쓰기시 공백�
 # datasource: #DB 접속이 1개만 있을 경우
 #   driver-class-name: oracle.jdbc.OracleDriver
 #  #url: jdbc:oracle:thin:@127.0.0.1:1521:xe
-#   url: jdbc:oracle:thin:@//127.0.0.1:1521/xe  # oracle 12c 이후부터는 이렇게 하라고 함.
-#   username: mymvc_user
+#  # url: jdbc:oracle:thin:@//127.0.0.1:1521/xe  # oracle 12c 이후부터는 이렇게 하라고 함.
+#  jdbc-url: jdbc:oracle:thin:@//oracle18:1521/xepdb1
+    username: mymvc_user
 #   password: gclass
 #   type: com.zaxxer.hikari.HikariDataSource
 #   hikari: #커넥션풀 
@@ -46,7 +47,8 @@ spring: # 주의할 점은 내용작성시 들여쓰기 내어쓰기시 공백�
 
   datasource-finalorauser2:
     driver-class-name: oracle.jdbc.OracleDriver
-    jdbc-url: jdbc:oracle:thin:@//127.0.0.1:1521/xepdb1
+   # jdbc-url: jdbc:oracle:thin:@//127.0.0.1:1521/xepdb1
+   jdbc-url: jdbc:oracle:thin:@//oracle18:1521/xepdb1
     username: final_orauser2
     password: seven
     type: com.zaxxer.hikari.HikariDataSource
@@ -75,8 +77,9 @@ spring: # 주의할 점은 내용작성시 들여쓰기 내어쓰기시 공백�
 
   data: #=== (몽고DB) === 
     mongodb:
-      uri: mongodb://devuser:qwer1234$@127.0.0.1:27017/mydb
-      
+     # uri: mongodb://devuser:qwer1234$@127.0.0.1:27017/mydb
+      uri: mongodb://devuser:qwer1234$@mongo:27017/mydb
+
   messages: #메시지(파일이 여러개일 경우 ,로 구분)
     basename: messages.validation
     encoding: UTF-8
