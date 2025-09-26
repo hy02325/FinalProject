@@ -15,13 +15,13 @@ spring: # 주의할 점은 내용작성시 들여쓰기 내어쓰기시 공백�
     password: rkxxdvmxxacztbcz
     properties:
       mail:
-      smtp:
-        auth: true
-        starttls:
-          enable: true  
- 
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+
   profiles: #실행환경(dev(개발),test(테스트),local(로컬),prod(운영))
-    active: local 
+    active: local
 
   mvc:
     view: #뷰 리졸버. view 경로 및 확장자 지정하기. JSP를 뷰로 사용한다.  
@@ -32,8 +32,8 @@ spring: # 주의할 점은 내용작성시 들여쓰기 내어쓰기시 공백�
 #   driver-class-name: oracle.jdbc.OracleDriver
 #  #url: jdbc:oracle:thin:@127.0.0.1:1521:xe
 #  # url: jdbc:oracle:thin:@//127.0.0.1:1521/xe  # oracle 12c 이후부터는 이렇게 하라고 함.
-#  jdbc-url: jdbc:oracle:thin:@//oracle18:1521/xepdb1
-    username: mymvc_user
+#   jdbc-url: jdbc:oracle:thin:@//oracle18:1521/xepdb1
+#   username: mymvc_user
 #   password: gclass
 #   type: com.zaxxer.hikari.HikariDataSource
 #   hikari: #커넥션풀 
@@ -47,8 +47,8 @@ spring: # 주의할 점은 내용작성시 들여쓰기 내어쓰기시 공백�
 
   datasource-finalorauser2:
     driver-class-name: oracle.jdbc.OracleDriver
-   # jdbc-url: jdbc:oracle:thin:@//127.0.0.1:1521/xepdb1
-   jdbc-url: jdbc:oracle:thin:@//oracle18:1521/xepdb1
+    # jdbc-url: jdbc:oracle:thin:@//127.0.0.1:1521/xepdb1
+    jdbc-url: jdbc:oracle:thin:@//oracle18:1521/xepdb1
     username: final_orauser2
     password: seven
     type: com.zaxxer.hikari.HikariDataSource
@@ -59,7 +59,6 @@ spring: # 주의할 점은 내용작성시 들여쓰기 내어쓰기시 공백�
       max-lifetime: 1800000
       connection-timeout: 30000
 
-      
   jpa:
     database-platform: org.hibernate.dialect.OracleDialect      # Spring Boot 3.2.1 버전 이후 부터는 JPA Provider가 적절한 Dialect 를 찾아내게 해주므로, 즉 설정을 명시하지 않아도 Oracle을 자동 인식해주므로 이를 명시적으로 지정하게 되면 오류가 발생하게 된다.  
 
@@ -74,10 +73,9 @@ spring: # 주의할 점은 내용작성시 들여쓰기 내어쓰기시 공백�
 
     open-in-view: false
 
-
   data: #=== (몽고DB) === 
     mongodb:
-     # uri: mongodb://devuser:qwer1234$@127.0.0.1:27017/mydb
+      # uri: mongodb://devuser:qwer1234$@127.0.0.1:27017/mydb
       uri: mongodb://devuser:qwer1234$@mongo:27017/mydb
 
   messages: #메시지(파일이 여러개일 경우 ,로 구분)
@@ -100,6 +98,7 @@ mybatis: #mybatis 설정
  #type-aliases-package: com.spring.app.**.domain 
  #mapper-locations: com/spring/app/**/mapper/*.xml   #src/main/java 아래 패키지속에 매퍼파일을 만드는 경우 
   mapper-locations: mybatis/mapper/**/*.xml          #src/main/resources 아래 폴더속에 매퍼파일을 만드는 경우
+
 logging: #로그 지정
   level:
     #root: error
@@ -118,5 +117,4 @@ server:
       charset: UTF-8
       enabled: true #http 인코딩 지원을 활성화할지 여부
       force: true #post 방식으로 전송했을때 한글데이터가 안깨지도록 함. # Spring Framework 에서는 web.xml 파일에서 filter 태그를 등록시켜 주었음.
-      
- 
+
